@@ -4,6 +4,7 @@ class FizzBuzz{
 
     public function count(int $int): string
     {
+        if($int % 15 === 0) return "FizzBuzz";
         if($this->isMultipleOf3($int)) return "Fizz";
         if($this->isMultipleOf5($int)) return "Buzz";
 
