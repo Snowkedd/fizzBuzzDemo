@@ -7,21 +7,27 @@ use PHPUnit\Framework\TestCase;
 
 class FizzBuzzTest extends TestCase
 {
+    private FizzBuzz $fizzBuzz;
+
+    protected function setUp():void
+    {
+        parent::setUp();
+        $this->fizzBuzz = new FizzBuzz();
+    }
+
     public function test_count_given1_shouldReturn1(){
         //Arrange (3)
-        $fizzBuzz = new FizzBuzz();
 
         //Act (2)
-        $actual = $fizzBuzz->count(1);
+        $actual = $this->fizzBuzz->count(1);
 
         //Assert (1)
-        $this->assertEquals("1",$actual );
+        $this->assertEquals("1",$actual);
     }
 
     public function test_count_given2_shouldReturn2(){
-        $fizzBuzz = new FizzBuzz();
 
-        $actual = $fizzBuzz->count(2);
+        $actual = $this->fizzBuzz->count(2);
 
         $this->assertEquals("2",$actual);
     }
